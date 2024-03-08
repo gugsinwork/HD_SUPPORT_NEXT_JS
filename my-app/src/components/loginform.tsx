@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function LoginForm(){
     return(
-        <div className="flex flex-col justify-center items-center mt-48">
+        <div className="flex flex-col justify-center items-center mt-36">
 
                 <div className="text-white text-center text-3xl font-bold mb-3">
                     

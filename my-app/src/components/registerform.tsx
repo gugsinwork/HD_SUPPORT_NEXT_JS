@@ -5,13 +5,13 @@ import { Checkbox } from "./ui/checkbox";
 
 export default function RegisterForm() {
   return (
-    <div className="flex justify-center items-center mt-4">
-      <div className="text-white mr-5">
+    <div className="flex justify-center items-center ">
+      <div className="text-white mr-16">
         <h1 className="font-bold text-5xl w-[500px]">Comece agora com HD Support</h1>
-        <p className="w-[500px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ut ex explicabo aliquam debitis dolorem quam quas, vero amet placeat facilis, necessitatibus earum delectus quia, error repudiandae voluptatem excepturi! A.</p>
+        <p className="w-[500px] mt-4">A equipe de aprendizes do BNE tem o prazer de apresentar um projeto inovador e eficiente desenvolvido para aprimorar o funcionamento do Help Desk. Reconhecendo a importância crítica do suporte técnico para garantir a produtividade e a satisfação dos usuários, dedicamos nossos esforços para criar uma solução abrangente e intuitiva que atenda às necessidades do Help Desk de forma eficaz e eficiente.</p>
       </div>
 
-      <div className="flex flex-col justify-center items-center mt-48">
+      <div className="flex flex-col justify-center items-center mt-36">
         <div className="text-white text-center text-3xl font-bold mb-3">
           Crie sua conta!
         </div>
@@ -48,7 +48,7 @@ export default function RegisterForm() {
           <div className="text-white text-center mt-3">
             <span className="text-slate-500 font-bold">
               Já possui conta? {" "}
-              <Link href="/register" className="text-white font-bold">
+              <Link href="/login" className="text-white font-bold">
                 Entre agora
               </Link>
             </span>
