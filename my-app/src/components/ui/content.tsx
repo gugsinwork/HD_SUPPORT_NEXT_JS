@@ -4,7 +4,7 @@ export default function Content(){
         <div className="flex justify-around items-center flex-wrap max-w-[95%]">
           <div className="flex items-center justify-around flex-col max-w-[50%]">
             <h1 className="text-slate-50 text-[48px] w-[100%] font-black">
-            <span className="text-cyan-400 p-[10px] rounded-[20px] solid contrast-200 bg-gray-950">Welcome to</span> Help Desk, Simplificando o Gerenciamento de Recursos Empresariais
+            <span className="p-[10px] rounded-[20px] solid contrast-200 bg-gray-950"><span className="bg-gradient-to-r from-cyan-500 to-blue-800 inline-block text-transparent bg-clip-text ">Welcome to</span></span> Help Desk, Simplificando o Gerenciamento de Recursos Empresariais
             </h1>
             <h1 className="text-[15px] rounded-br-[20px] rounded-l-[20px] solid contrast-200 p-[20px] relative right-[5px] bg-gray-950 text-slate-200  w-[100%]">
             Mantenha controle total sobre todos os funcionários da Employer. Do inventário à manutenção, o Help Desk permite que você acompanhe e gerencie cada dispositivo de forma eficiente.
