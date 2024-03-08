@@ -11,7 +11,7 @@ export default function Content(){
             </h1>
           </div>
           <div className="flex items-center  bg-slate-950 contrast-200 max-w-[500px]  rounded-[30px] justify-center">
-              <img src="ilustre.png" className=" h-[400px] contrast-200  bg-slate-950 p-[20px] relative right-2 rounded-[30px]" alt="" />
+              <img src="graficload-unscreen.gif" className=" h-[400px] w-[500px] contrast-200  bg-slate-950 p-[20px] relative right-2 rounded-[30px]" alt="" />
           </div>
         </div>
       </div>

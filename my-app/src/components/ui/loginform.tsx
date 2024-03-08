@@ -43,18 +43,20 @@ export default function LoginForm() {
         </div> 
  
         <form action=""> 
-          <div> 
+          <div className=" flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
             <Input 
               placeholder="Digite seu E-mail" 
-              className="dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none" 
+              className="border-none h-60px" 
             /> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-at-sign relative right-5 "><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
           </div> 
  
-          <div> 
+          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
             <Input 
               placeholder="Digite sua senha" 
-              className="dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none" 
+              className="border-none h-60px" 
             /> 
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
           </div> 
           <div className="flex items-center justify-end">
             <p className="text-slate-500 relative top-[20px]">Esqueceu a senha?</p>
@@ -75,7 +77,7 @@ export default function LoginForm() {
           </div> 
         </form> 
       </div> 
-      <button onClick={toggleDarkMode} className="text-center flex justify-center items-center absolute w-10 h-10 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
+      <button onClick={toggleDarkMode} className="text-center flex justify-center ml-5 items-center absolute w-10 h-10 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
         {darkMode ? <Sun/> : <Moon/>} 
       </button> 
     </div> 

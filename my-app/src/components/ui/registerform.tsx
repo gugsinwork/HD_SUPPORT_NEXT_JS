@@ -42,26 +42,28 @@ export default function LoginForm() {
         </div>
 
         <form action="">
-            <div>
-            <Input
-              placeholder="Digite seu Nome"
-              className="text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none dark:bg-slate-300 dark:text-black"
-            />
-          </div>
+        <div className=" flex items-center justify-center dark:bg-slate-300 dark:text-black text-white  w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+            <Input 
+              placeholder="Digite seu nome de usuário" 
+              className="border-none h-60px" 
+            /> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user  relative right-5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div> 
 
-          <div>
-            <Input
-              placeholder="Digite seu E-mail"
-              className="text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none dark:bg-slate-300 dark:text-black"
-            />
-          </div>
-
-          <div>
-            <Input
-            type="password"
-              placeholder="Digite sua senha"
-              className="text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 border-none text-lg dark:bg-slate-300 dark:text-black"
-            />
+          <div className=" flex items-center justify-center text-white dark:bg-slate-300 dark:text-black w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+            <Input 
+              placeholder="Digite seu E-mail" 
+              className="border-none h-60px" 
+            /> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-at-sign relative right-5 "><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+          </div> 
+ 
+          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+            <Input 
+              placeholder="Digite sua senha" 
+              className="border-none h-60px" 
+            /> 
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
           </div>
 
 
@@ -82,7 +84,7 @@ export default function LoginForm() {
       </div>
 
     </div>
-    <button onClick={toggleDarkMode} className="ml-3 text-center flex justify-center items-center absolute w-10 h-10 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
+    <button onClick={toggleDarkMode} className="ml-5 text-center flex justify-center items-center absolute w-10 h-10 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
         {darkMode ? <Sun/> : <Moon/>} 
       </button> 
     </div>
