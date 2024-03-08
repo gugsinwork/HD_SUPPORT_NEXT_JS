@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button"; 
 import Link from "next/link"; 
 import { useEffect, useState } from "react"; 
+import { Moon, Sun } from "lucide-react";
  
 export default function LoginForm() { 
     const [darkMode, setDarkMode] = useState(false); 
@@ -74,8 +75,8 @@ export default function LoginForm() {
           </div> 
         </form> 
       </div> 
-      <button onClick={toggleDarkMode} className="absolute w-16 h-16 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
-        {darkMode ? "LHT" : "DRK"} 
+      <button onClick={toggleDarkMode} className="text-center flex justify-center items-center absolute w-10 h-10 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
+        {darkMode ? <Sun/> : <Moon/>} 
       </button> 
     </div> 
   ); 
