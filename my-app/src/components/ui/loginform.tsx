@@ -2,18 +2,36 @@
 import { Input } from "@/components/ui/input"; 
 import { Button } from "@/components/ui/button"; 
 import Link from "next/link"; 
-import { useState } from "react"; 
+import { useEffect, useState } from "react"; 
  
 export default function LoginForm() { 
     const [darkMode, setDarkMode] = useState(false); 
  
     const toggleDarkMode = () => { 
         setDarkMode(!darkMode); 
+
+        const newMode = !darkMode;
+
+        setDarkMode(newMode);
+
+        localStorage.setItem('darkMode', newMode ? 'enabled' : 'disabled')
     } 
+
+    useEffect(() => {
+
+      const storedMode = localStorage.getItem('darkMode');
+      if (storedMode === 'enabled'){
+        setDarkMode(true);
+      }
+    },
+
+    []);
  
  
-  return ( 
-    <div className={`${darkMode && "dark"}`}> 
+  return (
+    
+    <div className={`${darkMode && "dark"}`}>
+      
       <div className="flex flex-col min-h-screen dark:bg-neutral-100 justify-center items-center"> 
         <div className="flex text-white text-center dark:text-black text-3xl font-bold mb-3"> 
           Login to Help Desk <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-rocket-takeoff relative bottom-2" viewBox="0 0 16 16">
