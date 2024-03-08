@@ -38,7 +38,7 @@ export default function LoginForm() {
             /> 
           </div> 
           <div className="flex items-center justify-end">
-            <p className="text-slate-500 relative top-[20px]">Esqueceu a senha?</p>
+            <p className="text-slate-500 relative top-[20px]">Esqueceu a senha? </p>
           </div>
           <Button 
             className="dark:bg-gradient-to-r dark:from-black dark:to-black  bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-lg w-[500px] h-[50px] mt-10 hover:from-blue-500 hover:via-sky-400 hover:to-cyan-500" 
