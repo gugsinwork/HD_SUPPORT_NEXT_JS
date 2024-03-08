@@ -12,8 +12,10 @@ export default function LoginForm() {
     } 
  
  
-  return ( 
-    <div className={`${darkMode && "dark"}`}> 
+  return (
+    
+    <div className={`${darkMode && "dark"}`}>
+      
       <div className="flex flex-col min-h-screen dark:bg-neutral-100 justify-center items-center"> 
         <div className="text-white text-center dark:text-black text-3xl font-bold mb-3"> 
           Login to Help Desk 
