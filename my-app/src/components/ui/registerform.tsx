@@ -3,15 +3,31 @@ import { Input } from "@/components/ui/input";
 import { Button } from "./button";
 import Link from "next/link";
 import { Checkbox } from "./checkbox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function LoginForm() { 
   const [darkMode, setDarkMode] = useState(false); 
+ 
+    const toggleDarkMode = () => { 
+        setDarkMode(!darkMode); 
 
-  const toggleDarkMode = () => { 
-      setDarkMode(!darkMode); 
-  } 
+        const newMode = !darkMode;
+
+        setDarkMode(newMode);
+
+        localStorage.setItem('darkMode', newMode ? 'enabled' : 'disabled')
+    } 
+
+    useEffect(() => {
+
+      const storedMode = localStorage.getItem('darkMode');
+      if (storedMode === 'enabled'){
+        setDarkMode(true);
+      }
+    },
+
+    []);
   return (
     <div className={`${darkMode && "dark"}`}>
       <div className=" min-h-screen dark:bg-neutral-100 flex justify-center items-center flex-row flex-wrap-reverse ">
