@@ -1,6 +1,16 @@
+"use client"
 import '@/components/ui/header.css'
+import { useRouter } from 'next/navigation';
 
 export default function Header(){
+
+    const router = useRouter();
+
+    const handleLogin = () =>{
+
+        router.push("/login");
+    }
+
     return( 
         <div className="Header">
             <header className="w-[100%] h-[90px] items-center justify-around     p-[35px] flex bg-slate-100">
@@ -18,7 +28,7 @@ export default function Header(){
                     <a href="">Playground</a>
                 
                     <div className='sign bg-slate-900 w-[100px] h-[40px] flex item-center justify-center rounded-[15px] cursor-pointer text-white'>
-                        <button >Sign in</button>
+                        <button onClick={handleLogin} >Sign in</button>
                     </div>
                 </div>
             </header>

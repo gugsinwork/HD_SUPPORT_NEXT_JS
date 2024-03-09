@@ -4,9 +4,15 @@ import { Button } from "./button";
 import Link from "next/link";
 import { Checkbox } from "./checkbox";
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
+
+import { Space_Grotesk } from "next/font/google";
+
 
 export default function LoginForm() { 
+
+
+
   const [darkMode, setDarkMode] = useState(false); 
  
     const toggleDarkMode = () => { 
@@ -33,7 +39,13 @@ export default function LoginForm() {
       <div className=" min-h-screen dark:bg-neutral-100 flex justify-center items-center flex-row flex-wrap-reverse ">
       <div className="text-white mr-16 mb-[140px]">
         <h1 className="font-bold text-5xl w-[500px] dark:text-black ">Comece agora com <span className="bg-gradient-to-r from-cyan-500 to-blue-800 inline-block text-transparent bg-clip-text">HD support</span></h1>
-        <p className="w-[500px] mt-4 dark:text-black">A equipe de aprendizes do BNE tem o prazer de apresentar um projeto inovador e eficiente desenvolvido para aprimorar o funcionamento do Help Desk. Reconhecendo a importância crítica do suporte técnico para garantir a produtividade e a satisfação dos usuários, dedicamos nossos esforços para criar uma solução abrangente e intuitiva que atenda às necessidades do Help Desk de forma eficaz e eficiente.</p>
+        <p className="w-[500px] mt-4 dark:text-black">A equipe de aprendizes do BNE tem o prazer de apresentar um projeto inovador e eficiente desenvolvido para aprimorar o funcionamento do Help Desk.
+        <ul>
+          <li className="mt-3 flex"> <Rocket className="mr-2"/> Lorem</li>
+          <li className="mt-3 flex"> <ShieldCheck className="mr-2"/> Lorem </li>
+          <li className="mt-3 flex"> <CircleGauge className="mr-2"/> Lorem </li>
+        </ul>
+        </p>
       </div>
 
       <div className="flex flex-col justify-center items-center">
