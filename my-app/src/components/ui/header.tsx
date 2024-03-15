@@ -12,9 +12,9 @@ export default function Header(){
     }
 
     return( 
-        <div className="Header">
-            <header className="w-[100%] h-[90px] items-center justify-around     p-[35px] flex bg-slate-100">
-                <div className="text-slate-950 justify-start flex items-start relative left-10">
+        <div className="Header flex items-center justify-center w-[100%]">
+            <header className="w-[80%] h-[90px] items-center rounded-[20px] mt-5 justify-around  p-[35px] flex bg-slate-50">
+                <div className="text-neutral-950 justify-start flex items-start relative left-10">
                     <h1 className='text-[30px] font-black '>Help desk</h1>
                     <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-rocket-takeoff relative top-1" viewBox="0 0 16 16">
                         <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362s.96-1.932.362-2.531c-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532"/>
@@ -25,9 +25,9 @@ export default function Header(){
                 <div className="flex items-center">
                     <a href="">Dashboard</a>
                     <a href="">Sobre nós</a>
-                    <a href="">Playground</a>
+                    <a href="">Chat</a>
                 
-                    <div className='sign bg-slate-900 w-[100px] h-[40px] flex item-center justify-center rounded-[15px] cursor-pointer text-white'>
+                    <div className='sign bg-neutral-950 w-[100px] h-[40px] flex item-center justify-center rounded-[15px] cursor-pointer text-white'>
                         <button onClick={handleLogin} >Sign in</button>
                     </div>
                 </div>

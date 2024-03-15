@@ -8,15 +8,15 @@ body{
  --black90: #242424; 
  --darkblue: #002fff; 
  --lightblue: #00c3ff; 
- --white: #ffffff; 
+ --white: rgb(248, 250, 252); 
 } 
 .grafico-animado{ 
  background: transparent; 
  width: 500px; 
  height: 400px;
  position: relative;
- top: 140px;
- left: 35px;
+ top: 200px;
+ left: px;
  
 } 
  
@@ -28,8 +28,11 @@ body{
 } 
  
 #c1{ 
- width: 40px;height: 20px; 
- background-color: var(--white); 
+ width: 50px;height: 20px; 
+ background-color: var(--white);
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-name: coluna1; 
  animation-duration: 5s; 
  animation-iteration-count: infinite; 
@@ -37,76 +40,100 @@ body{
  left: 0px; 
 } 
 #c2{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--lightblue); 
- animation-name: coluna2; 
+ animation-name: coluna2;
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px; 
  animation-duration: 5s; 
  animation-iteration-count: infinite; 
  animation-delay: 1.6s; 
- left: 45px; 
+ left: 55px; 
 } 
 #c3{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--darkblue); 
  animation-name: coluna3; 
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-duration: 5s; 
  animation-iteration-count: infinite; 
  animation-delay: 1.4s; 
- left: 90px; 
+ left: 110px; 
 } 
 #c4{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--white); 
  animation-name: coluna4; 
  animation-duration: 5s; 
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-iteration-count: infinite; 
  animation-delay: 1.2s; 
- left: 140px; 
+ left: 165px; 
 } 
 #c5{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--lightblue); 
  animation-name: coluna5; 
  animation-duration: 5s; 
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-iteration-count: infinite; 
  animation-delay: 1.8s; 
- left: 185px; 
+ left: 220px; 
 } 
 #c6{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--darkblue); 
  animation-name: coluna6; 
  animation-duration: 5s; 
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-iteration-count: infinite; 
  animation-delay: 1.6s; 
- left: 230px; 
+ left: 275px; 
 } 
 #c7{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--white); 
  animation-name: coluna7; 
  animation-duration: 5s; 
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-iteration-count: infinite; 
  animation-delay: 2.0s; 
- left: 280px; 
+ left: 330px; 
 } 
 #c8{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--lightblue); 
  animation-name: coluna8; 
  animation-duration: 5s; 
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-iteration-count: infinite; 
  animation-delay: 1.8s; 
- left: 325px; 
+ left: 385px; 
 } 
 #c9{ 
- width: 40px;height: 20px; 
+ width: 50px;height: 20px; 
  background-color: var(--darkblue); 
  animation-name: coluna9; 
  animation-duration: 5s; 
+ border-left: solid black 2px;
+ border-top: solid black 2px;
+ border-right: solid black 2px;
  animation-iteration-count: infinite; 
  animation-delay: 2.0s; 
- left: 370px; 
+ left: 440px; 
 } 
  
 @keyframes coluna1{ 
@@ -114,10 +141,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 100px; 
+  height: 120px; 
  } 
  50%{ 
-  height: 100px; 
+  height: 120px; 
  } 
  75%{ 
   height: 20px; 
@@ -131,10 +158,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 120px; 
+  height: 140px; 
  } 
  50%{ 
-  height: 120px; 
+  height: 140px; 
  } 
  75%{ 
   height: 20px; 
@@ -148,10 +175,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 140px; 
+  height: 160px; 
  } 
  50%{ 
-  height: 140px; 
+  height: 160px; 
  } 
  75%{ 
   height: 20px; 
@@ -165,10 +192,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 160px; 
+  height: 180px; 
  } 
  50%{ 
-  height: 160px; 
+  height: 180px; 
  } 
  75%{ 
   height: 20px; 
@@ -182,10 +209,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 180px; 
+  height: 200px; 
  } 
  50%{ 
-  height: 180px; 
+  height: 200px; 
  } 
  75%{ 
   height: 20px; 
@@ -199,10 +226,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 200px; 
+  height: 220px; 
  } 
  50%{ 
-  height: 200px; 
+  height: 220px; 
  } 
  75%{ 
   height: 20px; 
@@ -216,10 +243,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 220px; 
+  height: 240px; 
  } 
  50%{ 
-  height: 220px; 
+  height: 240px; 
  } 
  75%{ 
   height: 20px; 
@@ -233,10 +260,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 240px; 
+  height: 260px; 
  } 
  50%{ 
-  height: 240px; 
+  height: 260px; 
  } 
  75%{ 
   height: 20px; 
@@ -250,10 +277,10 @@ body{
   height: 20px; 
  } 
  25%{ 
-  height: 260px; 
+  height: 280px; 
  } 
  50%{ 
-  height: 260px; 
+  height: 280px; 
  } 
  75%{ 
   height: 20px; 
