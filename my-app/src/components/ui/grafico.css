@@ -12,11 +12,11 @@ body{
 } 
 .grafico-animado{ 
  background: transparent; 
- width: 600px; 
+ width: 500px; 
  height: 400px;
  position: relative;
  top: 140px;
- left: 80px;
+ left: 35px;
  
 } 
  
