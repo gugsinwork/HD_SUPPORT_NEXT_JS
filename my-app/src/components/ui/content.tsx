@@ -1,3 +1,5 @@
+import Grafico from "./grafico";
+
 export default function Content(){
     return(
         <div className="flex justify-around items-center max-w-[90%] mb-10 flex-wrap w-[100%]  rounded-[20px] bg-slate-900 h-[80vh] m-auto mt-5">
@@ -10,8 +12,8 @@ export default function Content(){
             Mantenha controle total sobre todos os funcionários da Employer. Do inventário à manutenção, o Help Desk permite que você acompanhe e gerencie cada dispositivo de forma eficiente.
             </h1>
           </div>
-          <div className="flex items-center  bg-slate-950 contrast-200 max-w-[500px]  rounded-[30px] justify-center">
-              <img src="graficload-unscreen.gif" className=" h-[400px] w-[500px] contrast-200  bg-slate-950 p-[20px] relative right-2 rounded-[30px]" alt="" />
+          <div className="flex items-center bg-slate-950 contrast-200 max-w-[500px]  rounded-[30px] justify-center">
+              <Grafico />
           </div>
         </div>
       </div>
