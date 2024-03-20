@@ -5,14 +5,50 @@ import Link from "next/link";
 import { Checkbox } from "./checkbox";
 import { useEffect, useState } from "react";
 import { CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
-
+import axios from 'axios'; 
+import { useRouter } from 'next/navigation'; 
 import { Space_Grotesk } from "next/font/google";
 
 
 export default function LoginForm() { 
 
 
-
+  const [nome, setNome] = useState(''); 
+  const [email, setEmail] = useState(''); 
+  const [telegram, setTelegram] = useState(''); 
+  const [telefone, setTelefone] = useState(''); 
+  const [statusFuncionario, setStatus] = useState(''); 
+  const [categoria, setCategoria] = useState(''); 
+ 
+  const router = useRouter(); 
+ 
+  const handleNavigation = () => { 
+    router.push('/login') 
+  } 
+ 
+  const handleRegister = async (e : any) => { 
+    e.preventDefault(); 
+ 
+    try { 
+      const response = await axios.post('https://localhost:7299/api/Funcionarios/Registro-Funcionarios', { 
+         
+         nome , 
+          email , 
+          telegram , 
+          telefone , 
+          statusFuncionario, 
+          categoria , 
+           
+ 
+      }); 
+ 
+      // Redireciona para a página de login após o cadastro bem-sucedido 
+     handleNavigation; // ou utilize useRouter() se estiver utilizando Next.js 10+ 
+    } catch (error) { 
+      console.error('Erro ao fazer cadastro:', error); 
+      // Trate os erros de validação ou outros erros retornados pela API 
+    } 
+  };  
   const [darkMode, setDarkMode] = useState(false); 
  
     const toggleDarkMode = () => { 
@@ -53,9 +89,9 @@ export default function LoginForm() {
           Crie sua conta!
         </div>
 
-        <form action="">
+        <form action="post" onSubmit={handleRegister}>
         <div className=" flex items-center justify-center dark:bg-slate-300 dark:text-black text-white  w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
-            <Input 
+            <Input value={nome} onChange={(e) => setNome(e.target.value)}
               placeholder="Digite seu nome de usuário" 
               className="border-none h-60px" 
             /> 
@@ -64,6 +100,7 @@ export default function LoginForm() {
 
           <div className=" flex items-center justify-center text-white dark:bg-slate-300 dark:text-black w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
             <Input 
+              value={email} onChange={(e) => setEmail(e.target.value)}
               placeholder="Digite seu E-mail" 
               className="border-none h-60px" 
             /> 
@@ -71,8 +108,33 @@ export default function LoginForm() {
           </div> 
  
           <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
-            <Input 
-              placeholder="Digite sua senha" 
+            <Input
+              value={telefone} onChange={(e) => setTelefone(e.target.value)}
+              placeholder="Digite seu telefone" 
+              className="border-none h-60px" 
+            /> 
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+          </div>
+          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+            <Input
+              value={telegram} onChange={(e) => setTelegram(e.target.value)}
+              placeholder="Digite seu telegram" 
+              className="border-none h-60px" 
+            /> 
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+          </div>
+          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+            <Input
+              value={statusFuncionario} onChange={(e) => setStatus(e.target.value)}
+              placeholder="Status" 
+              className="border-none h-60px" 
+            /> 
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+          </div>
+          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+            <Input
+              value={categoria} onChange={(e) => setCategoria(e.target.value)}
+              placeholder="Informe sua categoria" 
               className="border-none h-60px" 
             /> 
            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
@@ -80,7 +142,7 @@ export default function LoginForm() {
 
 
 
-          <Button className="dark:bg-gradient-to-r dark:from-black dark:to-black bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-lg w-[500px] h-[50px] mt-10 hover:from-blue-500 hover:via-sky-400 hover:to-cyan-500 ">
+          <Button type="submit" className="dark:bg-gradient-to-r dark:from-black dark:to-black bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-lg w-[500px] h-[50px] mt-10 hover:from-blue-500 hover:via-sky-400 hover:to-cyan-500 ">
             Criar conta
           </Button>
 

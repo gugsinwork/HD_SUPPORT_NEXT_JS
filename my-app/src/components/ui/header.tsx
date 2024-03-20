@@ -1,7 +1,8 @@
 "use client"
 import '@/components/ui/header.css'
 import { useRouter } from 'next/navigation';
-
+import { useEffect, useState } from "react";
+import { CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
 export default function Header(){
 
     const router = useRouter();
@@ -10,11 +11,33 @@ export default function Header(){
 
         router.push("/login");
     }
+    const [darkMode, setDarkMode] = useState(false); 
+ 
+    const toggleDarkMode = () => { 
+        setDarkMode(!darkMode); 
 
-    return( 
-        <div className="Header flex items-center justify-center w-[100%]">
-            <header className="w-[80%] h-[90px] items-center rounded-[20px] mt-5 justify-around  p-[35px] flex bg-slate-50">
-                <div className="text-neutral-950 justify-start flex items-start relative left-10">
+        const newMode = !darkMode;
+
+        setDarkMode(newMode);
+
+        localStorage.setItem('darkMode', newMode ? 'enabled' : 'disabled')
+    } 
+
+    useEffect(() => {
+
+      const storedMode = localStorage.getItem('darkMode');
+      if (storedMode === 'enabled'){
+        setDarkMode(true);
+      }
+    },
+
+    []);
+
+    return(
+        <div className={`${darkMode && "dark"}`} >
+            <div className="Header space-x-1 flex items-center justify-center w-[100%]">
+            <header className="w-[80%] border-2 border-neutral-950 dark:bg-neutral-950 dark:border-slate-50 h-[60px] items-center rounded-[20px] mt-5 justify-around  p-[35px] flex bg-slate-50">
+                <div className="text-neutral-950 dark:text-slate-50 justify-start flex items-start relative left-10">
                     <h1 className='text-[30px] font-black '>Help desk</h1>
                     <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-rocket-takeoff relative top-1" viewBox="0 0 16 16">
                         <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362s.96-1.932.362-2.531c-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532"/>
@@ -22,16 +45,24 @@ export default function Header(){
                         <path d="M7.009 12.139a7.6 7.6 0 0 1-1.804-1.352A7.6 7.6 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
                     </svg>
                 </div>
-                <div className="flex items-center">
+                <div className="text-neutral-950 dark:text-slate-50 flex items-center">
                     <a href="">Dashboard</a>
                     <a href="">Sobre nós</a>
                     <a href="">Chat</a>
                 
-                    <div className='sign bg-neutral-950 w-[100px] h-[40px] flex item-center justify-center rounded-[15px] cursor-pointer text-white'>
+                    <div className='sign dark:bg-slate-50 dark:text-neutral-950 bg-neutral-950 w-[100px] h-[30px] flex item-center justify-center rounded-[6px] cursor-pointer text-white hover:bg-slate-50 hover:border-2 hover:border-neutral-950 hover:text-neutral-950 outline-none'>
                         <button onClick={handleLogin} >Sign in</button>
                     </div>
                 </div>
             </header>
+            <div className='w-[8%] h-[72px] bg-slate-50 border-2 border-blue-700 rounded-[20px] relative top-[10px] flex items-center justify-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className=" text-blue-700 lucide lucide-earth"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            </div>
+            <button onClick={toggleDarkMode} className="ml-5 text-center flex justify-center items-center absolute w-10 h-10 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
+        {darkMode ? <Sun/> : <Moon/>} 
+      </button> 
         </div>
+        
     );
 }

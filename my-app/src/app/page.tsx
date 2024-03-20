@@ -1,5 +1,5 @@
 import Header from "@/components/ui/header";
-import Content from "@/components/ui/content";
+import Content from "@/app/Home/page";
 import TextContent from "@/components/ui/textcontent";
 export default function Home() {
   return (
