@@ -18,6 +18,7 @@ import * as React from 'react';
 export default function LoginForm() { 
   const [redirecionar, setRedirecionar] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const [openErro, setOpenErro] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [nome, setNome] = useState(''); 
@@ -39,7 +40,7 @@ export default function LoginForm() {
     e.preventDefault(); 
  
     try { 
-      const response = await axios.post('https://localhost:7299/api/Funcionarios/Registro-Funcionarios', { 
+      const response = await axios.post('https://hd-apiv2.azurewebsites.net/api/Funcionarios/Registro-Funcionarios', { 
          
          nome , 
           email , 
@@ -59,7 +60,10 @@ export default function LoginForm() {
       }, 2000);
     } catch (error) { 
       console.error('Erro ao fazer cadastro:', error); 
-      // Trate os erros de validação ou outros erros retornados pela API 
+      setOpenErro(true); 
+      setTimeout(() => {
+        router.push('/register')
+      }, 2000);
     } 
   };  
   const [darkMode, setDarkMode] = useState(false); 
@@ -109,13 +113,35 @@ export default function LoginForm() {
       </Modal>
         </div>
 
+        <div className="min-h-full w-full flex justify-center items-center">
+              <Modal
+            open={openErro}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className="absolute min-h-full w-full   h-[250px] flex justify-center items-center"
+          >
+        <Box className="absolute bg-white w-[350px] rounded-xl h-[300px] flex flex-col justify-center items-center">
+        <div className="failure-container">
+          <div className="failure-container">
+            <div className="failure-background">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+            </div>
+            <div className="failure-shadow"></div>
+          </div>
+        </div>
+        <h1 className="text-red-500 text-xl">Erro ao realizar cadastro</h1>
+        </Box>
+      </Modal>
+        </div>
+
 
       <div className=" min-h-screen dark:bg-neutral-100 flex justify-center items-center flex-row flex-wrap-reverse ">
       <div className="text-white mr-16 mb-[140px]">
         <h1 className="font-bold text-5xl w-[500px] dark:text-black ">Comece agora com <span className="bg-gradient-to-r from-cyan-500 to-blue-800 inline-block text-transparent bg-clip-text">HD support</span></h1>
         <p className="w-[500px] mt-4 dark:text-black">A equipe de aprendizes do BNE tem o prazer de apresentar um projeto inovador e eficiente desenvolvido para aprimorar o funcionamento do Help Desk.
-               </p> 
-               <ul>
+          </p> 
+               <ul className="dark:text-black">
           <li className="mt-3 flex"> <Rocket className="mr-2"/> Lorem</li>
           <li className="mt-3 flex"> <ShieldCheck className="mr-2"/> Lorem </li>
           <li className="mt-3 flex"> <CircleGauge className="mr-2"/> Lorem </li>
@@ -139,6 +165,7 @@ export default function LoginForm() {
 
           <div className=" flex items-center justify-center text-white dark:bg-slate-300 dark:text-black w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
             <Input 
+              type="email"
               value={email} onChange={(e) => setEmail(e.target.value)}
               placeholder="Digite seu E-mail" 
               className="border-none h-60px" 
@@ -153,7 +180,7 @@ export default function LoginForm() {
               placeholder="Digite seu telefone" 
               className="border-none h-60px" 
             /> 
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-at-sign relative right-5 "><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
           <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
             <Input
@@ -161,7 +188,7 @@ export default function LoginForm() {
               placeholder="Digite seu telegram" 
               className="border-none h-60px" 
             /> 
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"className="lucide lucide-at-sign relative right-5 "><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
           </div>
           <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
             <Input
@@ -187,7 +214,6 @@ export default function LoginForm() {
           </Button>
           
           <Button onClick={handleOpen}>aaaa</Button>
-
           <div className="text-white text-center mt-3">
             <span className="text-slate-500 font-bold">
               Já possui conta? {" "}
