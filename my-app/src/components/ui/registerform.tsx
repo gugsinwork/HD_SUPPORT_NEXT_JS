@@ -1,25 +1,34 @@
 'use client'
+import "./styles.scss";
 import { Input } from "@/components/ui/input";
 import { Button } from "./button";
 import Link from "next/link";
 import { Checkbox } from "./checkbox";
 import { useEffect, useState } from "react";
-import { CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
+import { CircleCheck, CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
 import axios from 'axios'; 
 import { useRouter } from 'next/navigation'; 
 import { Space_Grotesk } from "next/font/google";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import * as React from 'react';
 
 
 export default function LoginForm() { 
-
-
+  const [redirecionar, setRedirecionar] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [nome, setNome] = useState(''); 
   const [email, setEmail] = useState(''); 
   const [telegram, setTelegram] = useState(''); 
   const [telefone, setTelefone] = useState(''); 
   const [statusFuncionario, setStatus] = useState(''); 
   const [categoria, setCategoria] = useState(''); 
- 
+
+
+
   const router = useRouter(); 
  
   const handleNavigation = () => { 
@@ -43,7 +52,11 @@ export default function LoginForm() {
       }); 
  
       // Redireciona para a página de login após o cadastro bem-sucedido 
-     handleNavigation; // ou utilize useRouter() se estiver utilizando Next.js 10+ 
+     setOpen(true);
+      setRedirecionar(true);
+      setTimeout(() => {
+        router.push('/login')
+      }, 2000);
     } catch (error) { 
       console.error('Erro ao fazer cadastro:', error); 
       // Trate os erros de validação ou outros erros retornados pela API 
@@ -72,16 +85,42 @@ export default function LoginForm() {
     []);
   return (
     <div className={`${darkMode && "dark"}`}>
+          <div className="min-h-full w-full flex justify-center items-center">
+              <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            className="absolute min-h-full w-full   h-[250px] flex justify-center items-center"
+          >
+        <Box className="absolute bg-white w-[350px] rounded-xl h-[300px] flex flex-col justify-center items-center">
+        <div className="main-container">
+          <div className="check-container">
+            <div className="check-background">
+              <svg viewBox="0 0 65 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 25L27.3077 44L58.5 7" stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div className="check-shadow"></div>
+          </div>
+        </div>
+        <h1 className="text-green-500 text-xl">Cadastro realizado com sucesso!</h1>
+        </Box>
+      </Modal>
+        </div>
+
+
       <div className=" min-h-screen dark:bg-neutral-100 flex justify-center items-center flex-row flex-wrap-reverse ">
       <div className="text-white mr-16 mb-[140px]">
         <h1 className="font-bold text-5xl w-[500px] dark:text-black ">Comece agora com <span className="bg-gradient-to-r from-cyan-500 to-blue-800 inline-block text-transparent bg-clip-text">HD support</span></h1>
         <p className="w-[500px] mt-4 dark:text-black">A equipe de aprendizes do BNE tem o prazer de apresentar um projeto inovador e eficiente desenvolvido para aprimorar o funcionamento do Help Desk.
-        <ul>
+               </p> 
+               <ul>
           <li className="mt-3 flex"> <Rocket className="mr-2"/> Lorem</li>
           <li className="mt-3 flex"> <ShieldCheck className="mr-2"/> Lorem </li>
           <li className="mt-3 flex"> <CircleGauge className="mr-2"/> Lorem </li>
         </ul>
-        </p>
+
       </div>
 
       <div className="flex flex-col justify-center items-center">
@@ -103,6 +142,7 @@ export default function LoginForm() {
               value={email} onChange={(e) => setEmail(e.target.value)}
               placeholder="Digite seu E-mail" 
               className="border-none h-60px" 
+              required
             /> 
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-at-sign relative right-5 "><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
           </div> 
@@ -145,6 +185,8 @@ export default function LoginForm() {
           <Button type="submit" className="dark:bg-gradient-to-r dark:from-black dark:to-black bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-lg w-[500px] h-[50px] mt-10 hover:from-blue-500 hover:via-sky-400 hover:to-cyan-500 ">
             Criar conta
           </Button>
+          
+          <Button onClick={handleOpen}>aaaa</Button>
 
           <div className="text-white text-center mt-3">
             <span className="text-slate-500 font-bold">
