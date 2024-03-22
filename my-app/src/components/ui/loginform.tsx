@@ -73,7 +73,7 @@ export default function LoginForm() {
    
     <div className={`${darkMode && "dark"}`}>
      
-      <div className="flex flex-col min-h-screen dark:bg-neutral-100 justify-center items-center">
+      <div className="flex flex-col min-h-screen bg-black dark:bg-neutral-100 justify-center items-center">
         <div className="flex text-white text-center dark:text-black text-3xl font-bold mb-3">
           Login to Help Desk <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-rocket-takeoff relative bottom-2" viewBox="0 0 16 16">
                         <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362s.96-1.932.362-2.531c-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532"/>
@@ -83,33 +83,33 @@ export default function LoginForm() {
         </div>
  
         <form method="post" onSubmit={handleLogin}>
-          <div className=" flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+          <div className=" flex items-center justify-center dark:bg-slate-300 dark:text-black text-neutral-500 w-[500px] rounded h-[60px] mt-5 bg-neutral-950 text-lg border-none">
             <Input
               value={email} onChange={(e) => setEmail(e.target.value)}
               placeholder="Digite seu E-mail"
               className="border-none h-60px"
             />
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-at-sign relative right-5 "><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide text-neutral-500 dark:text-neutral-950 lucide-at-sign relative right-5 "><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
           </div>
  
-          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-neutral-500 w-[500px] rounded h-[60px] mt-5 bg-neutral-950 text-lg border-none">
             <Input
               value={senha} onChange={(e) => setSenha(e.target.value)}
               placeholder="Digite sua senha"
               className="border-none h-60px"
             />
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole text-neutral-500 dark:text-neutral-950 relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
           </div>
-          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-white w-[500px] rounded h-[60px] mt-5 bg-slate-900 text-lg border-none">
+          <div className="flex items-center justify-center dark:bg-slate-300 dark:text-black text-neutral-500 w-[500px] rounded h-[60px] mt-5 bg-neutral-950 text-lg border-none">
             <Input
               value={nome} onChange={(e) => setNome(e.target.value)}
               placeholder="Digite sua senha"
               className="border-none h-60px"
             />
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide text-neutral-500 dark:text-neutral-950 lucide-lock-keyhole relative  right-5"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
           </div>
           <div className="flex items-center justify-end">
-            <p className="text-slate-500 relative top-[20px]">Esqueceu a senha?</p>
+            <p className="text-neutral-500 relative top-[20px]">Esqueceu a senha?</p>
           </div>
           <Button
             type="submit"
@@ -119,7 +119,7 @@ export default function LoginForm() {
           </Button>
  
           <div className="text-white text-center mt-6">
-            <span className="text-slate-500 font-bold">
+            <span className="text-neutral-500 font-bold">
               Não possui conta?{" "}
               <Link href="/register" className="dark:text-black text-white font-bold">
                 Crie uma!
