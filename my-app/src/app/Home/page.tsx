@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
 import Header from '@/components/ui/header'
 import TextContent from "@/components/ui/textcontent";
-export default function Content(){
+export default async function Content(){
   
   const [darkMode, setDarkMode] = useState(false); 
  

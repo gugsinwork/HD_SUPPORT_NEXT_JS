@@ -1,15 +1,15 @@
 'use client'
-import  "../ui/loading.module.css"; 
+import  "./loading.module.css"; 
 
 export default function Loading(){
     return(
-        <div className="w-full h-full absolute justify-center items-center ">
-            <div className="loading-wave">
+
+            <div className="loading-wave min-w-full flex items-center justify-center">
             <div className="loading-bar"></div>
             <div className="loading-bar"></div>
             <div className="loading-bar"></div>
             <div className="loading-bar"></div>
             </div>
-        </div>
+
     );
 }

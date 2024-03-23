@@ -5,7 +5,8 @@ import TextContent from "@/components/ui/textcontent";
 import { useEffect, useState } from "react";
 import { CircleCheck, CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise((resolve) => setTimeout(resolve, 4000));
   const [darkMode, setDarkMode] = useState(false); 
  
   const toggleDarkMode = () => { 

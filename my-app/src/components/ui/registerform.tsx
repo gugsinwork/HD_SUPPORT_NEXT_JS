@@ -26,7 +26,7 @@ export default function LoginForm() {
   const [senha, setSenha] = useState('');
 
 
-
+  
   const router = useRouter(); 
  
   const handleNavigation = () => { 
@@ -78,6 +78,7 @@ export default function LoginForm() {
     },
 
     []);
+
   return (
     <div className={`${darkMode && "dark"}`}>
           <div className="min-h-full w-full flex justify-center items-center">
@@ -128,16 +129,51 @@ export default function LoginForm() {
 
 
       <div className=" min-h-screen bg-black dark:bg-neutral-100 flex justify-center items-center flex-row flex-wrap-reverse ">
-      <div className="text-white mr-16 mb-[140px]">
+      <div className="text-white flex flex-col justify-center mr-16 mb-[140px]">
         <h1 className="font-bold text-5xl w-[500px] dark:text-black ">Comece agora com <span className="bg-gradient-to-r from-cyan-500 to-blue-800 inline-block text-transparent bg-clip-text">HD support</span></h1>
         <p className="w-[500px] mt-4 dark:text-black">A equipe de aprendizes do BNE tem o prazer de apresentar um projeto inovador e eficiente desenvolvido para aprimorar o funcionamento do Help Desk.
           </p> 
-               <ul className="">
-          <li className="mt-3 flex"> <Rocket className="mr-2"/> Rápido</li>
-          <li className="mt-3 flex"> <ShieldCheck className="mr-2"/> Seguro </li>
-          <li className="mt-3 flex"> <CircleGauge className="mr-2"/> Eficiente </li>
+          <ul>
+          <li className="mt-3 flex space-x-1"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#gradiente1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-rocket">
+              <defs>
+                <linearGradient id="gradiente1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="rgb(6,182,212)" stopOpacity="1" />
+                  <stop offset="100%" stopColor="blue" stopOpacity="1" />
+                </linearGradient>
+              </defs>
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg> <p className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-800 font-bold"> Rápido</p>
+          </li>
+          <li className="mt-3 space-x-1 flex"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#gradiente2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield-check">
+              <defs>
+                <linearGradient id="gradiente2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="rgb(6,182,212)" stopOpacity="1" />
+                  <stop offset="100%" stopColor="blue" stopOpacity="1" />
+                </linearGradient>
+              </defs>
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+            <p className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-800 font-bold"> Seguro</p>
+          </li>
+          <li className="mt-3 space-x-1 flex"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#gradiente3)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-gauge">
+              <defs>
+                <linearGradient id="gradiente3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="rgb(6,182,212)" stopOpacity="1" />
+                  <stop offset="100%" stopColor="blue" stopOpacity="1" />
+                </linearGradient>
+              </defs>
+              <path d="M15.6 2.7a10 10 0 1 0 5.7 5.7"/><circle cx="12" cy="12" r="2"/><path d="M13.4 10.6 19 5"/>
+            </svg>
+            <p className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-800 font-bold"> Eficiente</p>
+          </li>
         </ul>
-
       </div>
 
       <div className="flex flex-col justify-center items-center">
@@ -177,7 +213,7 @@ export default function LoginForm() {
 
 
 
-          <Button type="submit" className="dark:bg-gradient-to-r dark:from-black dark:to-black bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-lg w-[500px] h-[50px] mt-10 hover:from-blue-500 hover:via-sky-400 hover:to-cyan-500 ">
+          <Button type="submit" className="dark:bg-gradient-to-r dark:from-black dark:to-black bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded text-lg w-[500px] h-[50px] mt-10 transition-all ease-in-out duration-1000 hover:from-blue-500 hover:via-sky-400 hover:to-cyan-500 ">
             Criar conta
           </Button>
           
@@ -185,7 +221,7 @@ export default function LoginForm() {
           <div className="text-white text-center mt-3">
             <span className="text-neutral-500 font-bold">
               Já possui conta? {" "}
-              <Link href="/login" className="text-white font-bold dark:text-black">
+              <Link href="/login" className="text-white animate-pulse font-bold dark:text-black">
                 Entre agora
               </Link>
             </span>
