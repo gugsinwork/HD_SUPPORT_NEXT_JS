@@ -7,7 +7,7 @@ import { CircleCheck, CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide
 
 export default async function Home() {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 4000));
+    await new Promise((resolve) => setTimeout(resolve, 400));
     console.log('Promise resolvida após 4 segundos');
   } catch (error) {
     console.error('Erro ao aguardar a resolução da Promise:', error);
