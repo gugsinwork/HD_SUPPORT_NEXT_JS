@@ -6,7 +6,12 @@ import { useEffect, useState } from "react";
 import { CircleCheck, CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
 
 export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 4000));
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 4000));
+    console.log('Promise resolvida após 4 segundos');
+  } catch (error) {
+    console.error('Erro ao aguardar a resolução da Promise:', error);
+  }
   const [darkMode, setDarkMode] = useState(false); 
  
   const toggleDarkMode = () => { 
