@@ -13,8 +13,3 @@ div a{
     transition: all ease 0.5s;
     font-family: "Space Grotesk", sans-serif;
 }
-.sign:hover{
-    border: solid rgb(5, 50, 250) 1px;
-    background-color: rgba(6, 12, 22, 0);
-    color: rgb(4, 0, 255);
-}

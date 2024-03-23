@@ -1,14 +1,48 @@
+'use client'
 import Header from "@/components/ui/header";
-import Content from "@/components/ui/content";
+import Content from "@/app/Home/page";
 import TextContent from "@/components/ui/textcontent";
-import Cards from "@/components/ui/cards"
-export default function Home() {
+import { useEffect, useState } from "react";
+import { CircleCheck, CircleGauge, Moon, Rocket, ShieldCheck, Sun } from "lucide-react";
+
+export default async function Home() {
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 4000));
+    console.log('Promise resolvida após 4 segundos');
+  } catch (error) {
+    console.error('Erro ao aguardar a resolução da Promise:', error);
+  }
+  const [darkMode, setDarkMode] = useState(false); 
+ 
+  const toggleDarkMode = () => { 
+      setDarkMode(!darkMode); 
+
+      const newMode = !darkMode;
+
+      setDarkMode(newMode);
+
+      localStorage.setItem('darkMode', newMode ? 'enabled' : 'disabled')
+  } 
+
+  useEffect(() => {
+
+    const storedMode = localStorage.getItem('darkMode');
+    if (storedMode === 'enabled'){
+      setDarkMode(true);
+    }
+  },
+
+  []);
   return (
-    <div className="Home bg-slate-950 h-[100vw] w-[100%] items-center flex-col justify-center">
-      <Header />
+    <div className={`${darkMode && "dark"}`}>
+      <div className="Home dark:bg-slate-50 bg-neutral-950 h-[100vw] w-[100%] items-center flex-col justify-center">
         <Content />
+        <button onClick={toggleDarkMode} className="ml-5 text-center flex justify-center items-center absolute w-10 h-10 bottom-16 right-26 bg-white text-dark dark:text-white dark:bg-neutral-900 rounded-full"> 
+        {darkMode ? <Sun/> : <Moon/>} 
+      </button> 
           <TextContent />
-          <Cards />
+      </div>
     </div>
+    
   );
 }
